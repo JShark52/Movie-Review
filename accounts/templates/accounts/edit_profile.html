@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="text-center">Update Your Account</h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <input type="submit" value="Save Changes" class="btn btn-danger">
+                <a href="{% url 'main:home' %}" class="btn btn-danger" onclick="return confirm('are you sure you want to delete this?');">Delete Profile</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
